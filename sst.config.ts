@@ -1,5 +1,4 @@
 /// <reference path="./.sst/platform/config.d.ts" />
-import * as aws from "@pulumi/aws";
 
 export default $config({
   app(input) {
@@ -19,7 +18,7 @@ export default $config({
       link: [api]
     });
 
-    api.route("GET /", "src/functions/hello.handler");
+    api.route("GET /", "src/api/index.handler");
     return {
       api: api.url,
     };
